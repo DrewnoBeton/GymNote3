@@ -1,9 +1,6 @@
 package com.example.gymnote.view
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.gymnote.data.CwiczeniaREPO
 import com.example.gymnote.data.Cwiczenie
 import kotlinx.coroutines.launch
@@ -57,6 +54,22 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
 
     fun usun_lub_usunCwiczenia()
     {
-
+        //todo wypierdala apke xD i niczego nie usuwa
+        usunCwiczenia()
     }
+
+    private fun usunCwiczenia() = viewModelScope.launch {
+        val usuniete_wiersze = repo.usunCwiczenia()
+        if(usuniete_wiersze > 0)
+        {
+            statusMessage.value = Event("Usunięto ($usuniete_wiersze) ćwiczeń")
+        }
+        else
+        {
+            statusMessage.value = Event("Błąd przy usuwaniu ćwiczeń")
+        }
+    }
+
+
+    fun wczytajCwiczenia() = liveData{ repo.cwiczenia.collect{emit(it)} }
 }

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CwiczeniaDAO {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    @Insert
     suspend fun wstawCwiczenie(cwiczenie: Cwiczenie): Long
 
     @Update
@@ -21,9 +21,9 @@ interface CwiczeniaDAO {
     fun getCwiczenia(): Flow<List<Cwiczenie>>
 
     @Query("DELETE FROM cwiczenia")
-    fun usunCwiczenia(): Int
+    suspend fun usunCwiczenia(): Int
 
-
+    //@Insert(onConflict = OnConflictStrategy.REPLACE)
     //fun wstawCwiczenia(cwiczenia: List<Cwiczenie>)
 
     //@Query("SELECT * FROM cwiczenia WHERE id = :cw_id")
