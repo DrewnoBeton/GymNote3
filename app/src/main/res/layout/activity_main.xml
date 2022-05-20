@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<data>
+    <variable
+        name="mojView"
+        type="com.example.gymnote.view.CwiczenieView" />
+</data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/nazwa_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="Nazwa ćwiczenia"
+        android:text="@={mojView.inputNazwa}"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/opis_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_marginBottom="5dp"
+        android:ems="10"
+        android:hint="Opis ćwiczenia"
+        android:inputType="textPersonName"
+        android:text="@={mojView.inputOpis}"
+        android:minHeight="48dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/zapisz_update_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:onClick="@{()->mojView.zapisz_lub_update()}"
+            android:text="@={mojView.zlu_btn_text}" />
+
+        <Button
+            android:id="@+id/usun_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_weight="1"
+            android:onClick="@{()->mojView.usun_lub_usunCwiczenia()}"
+            android:text="@={mojView.usun_btn_text}" />
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cwiczenia_RecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="296dp"
+        android:layout_margin="5dp" />
+</LinearLayout>
+</layout>
