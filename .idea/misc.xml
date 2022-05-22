@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/admin/AndroidStudioProjects/GymNote/app/src/main/res/layout/activity_main.xml" value="0.33106884057971014" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/GymNote/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/GymNote/app/src/main/res/layout/fragment_cwiczenie.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/admin/AndroidStudioProjects/GymNote/app/src/main/res/layout/item_lista.xml" value="0.5" />
         <entry key="..\:/Users/admin/AndroidStudioProjects/GymNote/app/src/main/res/layout/lista.xml" value="0.36666666666666664" />
       </map>
     </option>

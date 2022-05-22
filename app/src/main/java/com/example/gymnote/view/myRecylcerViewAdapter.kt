@@ -41,7 +41,8 @@ class myViewHolder(val binding: ItemListaBinding): RecyclerView.ViewHolder(bindi
     {
         binding.cwNazwaText.text = cwiczenie.nazwa
         binding.cwOpisText.text = cwiczenie.opis
-        //todo dorobic ciezar ilosc
+        binding.cwCiezarText.text = cwiczenie.ciezar.toString()
+        binding.iloscText.text = cwiczenie.ilosc.toString()
         binding.listaCwiczen.setOnClickListener{clickListener(cwiczenie)}
    }
 }

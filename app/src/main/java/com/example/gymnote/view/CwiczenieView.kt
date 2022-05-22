@@ -12,8 +12,10 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
     private lateinit var cwiczenieDoZmiany: Cwiczenie
     val inputNazwa = MutableLiveData<String>()
     val inputOpis= MutableLiveData<String>()
+    val inputIlosc = MutableLiveData<String>()
+    val inputCiezar = MutableLiveData<String>()
 
-    //TODO przekminic ilosc i ciezar
+    //TODO przekminic ilosc i ciezar sypie sie jak sie nie da ciezaru
     val zlu_btn_text = MutableLiveData<String>()
     val usun_btn_text = MutableLiveData<String>()
 
@@ -29,6 +31,8 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
 
     fun zapisz_lub_update()
     {
+        var ciezar = 0
+        var ilosc = 0
         if(inputNazwa.value == null)
         {
             statusMessage.value = Event("Podaj nazwę ćwiczenia")
@@ -42,14 +46,30 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             {
                 cwiczenieDoZmiany.nazwa = inputNazwa.value!!
                 cwiczenieDoZmiany.opis = inputOpis.value!!
+                if(inputCiezar.value == null) {
+                    ciezar = 0
+                    cwiczenieDoZmiany.ciezar = ciezar
+                }
+                else { cwiczenieDoZmiany.ciezar = inputCiezar.value!!.toInt() }
+                if(inputIlosc.value == null) {
+                    ilosc = 0
+                    cwiczenieDoZmiany.ilosc = ilosc
+                }
+                else { cwiczenieDoZmiany.ilosc = inputIlosc.value!!.toInt() }
                 updateCwiczenie(cwiczenieDoZmiany)
             }
             else {
                 val nazwa = inputNazwa.value!!
                 val opis = inputOpis.value!!
-                wstawCwiczenie(Cwiczenie(0, nazwa, opis, "", 0, 0))
+                if(inputCiezar.value == null) { ciezar = 0 }
+                else { ciezar = inputCiezar.value!!.toInt() }
+                if(inputIlosc.value == null) { ilosc = 0 }
+                else { ilosc = inputIlosc.value!!.toInt() }
+                wstawCwiczenie(Cwiczenie(0, nazwa, opis, "", ilosc, ciezar))
                 inputNazwa.value = ""
                 inputOpis.value = ""
+                inputCiezar.value = ""
+                inputIlosc.value = ""
             }
         }
     }
@@ -57,9 +77,11 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
     {
         inputNazwa.value = cwiczenie.nazwa
         inputOpis.value = cwiczenie.opis
+        inputIlosc.value = cwiczenie.ilosc.toString()
+        inputCiezar.value = cwiczenie.ciezar.toString()
         czyWybrano = true
         cwiczenieDoZmiany = cwiczenie
-        zlu_btn_text.value = "Edytuj"
+        zlu_btn_text.value = "Zapisz zmiany"
         usun_btn_text.value = "Usuń"
     }
     private fun updateCwiczenie(cwiczenie: Cwiczenie) = viewModelScope.launch {
@@ -68,6 +90,8 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
         {
             inputNazwa.value = ""
             inputOpis.value = ""
+            inputCiezar.value = ""
+            inputIlosc.value = ""
             czyWybrano = false
             zlu_btn_text.value = "Zapisz"
             usun_btn_text.value = "Usuń wszystkie"
@@ -107,6 +131,8 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
         {
             inputNazwa.value = ""
             inputOpis.value = ""
+            inputCiezar.value = ""
+            inputIlosc.value = ""
             czyWybrano = false
             zlu_btn_text.value = "Zapisz"
             usun_btn_text.value = "Usuń wszystkie"

@@ -11,8 +11,7 @@ data class Cwiczenie(
     @ColumnInfo(name = "nazwa") var nazwa: String,
     @ColumnInfo(name = "opis") var opis: String,
     @ColumnInfo(name = "pic_url") val imageUrl: String = "",
-    @ColumnInfo(name = "ilosc") val ilosc: Int = 0,
-    @ColumnInfo(name = "ceizar") val ciezar: Int = 0
-    //TODO czy trening
+    @ColumnInfo(name = "ilosc") var ilosc: Int = 0,
+    @ColumnInfo(name = "ceizar") var ciezar: Int = 0
 
 )
