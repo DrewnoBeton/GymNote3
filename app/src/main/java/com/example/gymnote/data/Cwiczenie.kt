@@ -8,8 +8,8 @@ import androidx.room.PrimaryKey
 data class Cwiczenie(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id") val cw_id: Int,
-    @ColumnInfo(name = "nazwa") val nazwa: String,
-    @ColumnInfo(name = "opis") val opis: String,
+    @ColumnInfo(name = "nazwa") var nazwa: String,
+    @ColumnInfo(name = "opis") var opis: String,
     @ColumnInfo(name = "pic_url") val imageUrl: String = "",
     @ColumnInfo(name = "ilosc") val ilosc: Int = 0,
     @ColumnInfo(name = "ceizar") val ciezar: Int = 0

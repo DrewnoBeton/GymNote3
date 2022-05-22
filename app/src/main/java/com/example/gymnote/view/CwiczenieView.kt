@@ -8,8 +8,11 @@ import kotlinx.coroutines.flow.collect
 
 class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
 {
+    private var czyWybrano = false
+    private lateinit var cwiczenieDoZmiany: Cwiczenie
     val inputNazwa = MutableLiveData<String>()
     val inputOpis= MutableLiveData<String>()
+
     //TODO przekminic ilosc i ciezar
     val zlu_btn_text = MutableLiveData<String>()
     val usun_btn_text = MutableLiveData<String>()
@@ -35,11 +38,47 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             statusMessage.value = Event("Podaj opis ćwiczenia")
         }
         else {
-            val nazwa = inputNazwa.value!!
-            val opis = inputOpis.value!!
-            wstawCwiczenie(Cwiczenie(0, nazwa, opis, "", 0, 0))
+            if(czyWybrano)
+            {
+                cwiczenieDoZmiany.nazwa = inputNazwa.value!!
+                cwiczenieDoZmiany.opis = inputOpis.value!!
+                updateCwiczenie(cwiczenieDoZmiany)
+            }
+            else {
+                val nazwa = inputNazwa.value!!
+                val opis = inputOpis.value!!
+                wstawCwiczenie(Cwiczenie(0, nazwa, opis, "", 0, 0))
+                inputNazwa.value = ""
+                inputOpis.value = ""
+            }
         }
     }
+    fun init_update_lub_usun(cwiczenie: Cwiczenie)
+    {
+        inputNazwa.value = cwiczenie.nazwa
+        inputOpis.value = cwiczenie.opis
+        czyWybrano = true
+        cwiczenieDoZmiany = cwiczenie
+        zlu_btn_text.value = "Edytuj"
+        usun_btn_text.value = "Usuń"
+    }
+    private fun updateCwiczenie(cwiczenie: Cwiczenie) = viewModelScope.launch {
+        val wiersze = repo.update(cwiczenie)
+        if (wiersze > 0)
+        {
+            inputNazwa.value = ""
+            inputOpis.value = ""
+            czyWybrano = false
+            zlu_btn_text.value = "Zapisz"
+            usun_btn_text.value = "Usuń wszystkie"
+            statusMessage.value = Event("$wiersze cwiczenie zostało zaktualizowane")
+        }
+        else
+        {
+            statusMessage.value = Event("Błąd przy aktualizacji ćwiczenia")
+        }
+    }
+
     private fun wstawCwiczenie(cwiczenie: Cwiczenie) = viewModelScope.launch{
         val nowe_id = repo.wstaw(cwiczenie)
         if (nowe_id > -1)
@@ -54,8 +93,29 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
 
     fun usun_lub_usunCwiczenia()
     {
-        //todo wypierdala apke xD i niczego nie usuwa
-        usunCwiczenia()
+        if(czyWybrano)
+        {
+            usun(cwiczenieDoZmiany)
+        }
+        else {
+            usunCwiczenia()
+        }
+    }
+    private fun usun(cwiczenie: Cwiczenie) = viewModelScope.launch {
+        val wiersze = repo.usun(cwiczenie)
+        if(wiersze > 0)
+        {
+            inputNazwa.value = ""
+            inputOpis.value = ""
+            czyWybrano = false
+            zlu_btn_text.value = "Zapisz"
+            usun_btn_text.value = "Usuń wszystkie"
+            statusMessage.value = Event("$wiersze cwiczenie zostało usunięte")
+        }
+        else
+        {
+            statusMessage.value = Event("Błąd przy usuwaniu ćwiczenia")
+        }
     }
 
     private fun usunCwiczenia() = viewModelScope.launch {

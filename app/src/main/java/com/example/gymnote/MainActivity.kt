@@ -53,6 +53,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
     private fun wybranyItemClick(cwiczenie: Cwiczenie){
+        cwiczenieView.init_update_lub_usun(cwiczenie)
         Toast.makeText(this,"Wybrano ćwiczenie ${cwiczenie.cw_id}", Toast.LENGTH_LONG).show()
     }
 }
