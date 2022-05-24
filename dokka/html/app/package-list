@@ -1,0 +1,73 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.gymnote.data////PointingToDeclaration/app/com.example.gymnote.data/index.html
+$dokka.location:com.example.gymnote.data/Baza.Companion///PointingToDeclaration/app/com.example.gymnote.data/-baza/-companion/index.html
+$dokka.location:com.example.gymnote.data/Baza.Companion/getInstance/#android.content.Context/PointingToDeclaration/app/com.example.gymnote.data/-baza/-companion/get-instance.html
+$dokka.location:com.example.gymnote.data/Baza///PointingToDeclaration/app/com.example.gymnote.data/-baza/index.html
+$dokka.location:com.example.gymnote.data/Baza/Baza/#/PointingToDeclaration/app/com.example.gymnote.data/-baza/-baza.html
+$dokka.location:com.example.gymnote.data/Baza/cwiczeniaDAO/#/PointingToDeclaration/app/com.example.gymnote.data/-baza/cwiczenia-d-a-o.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO///PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/index.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO/getCwiczenia/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/get-cwiczenia.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO/updateCwiczenie/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/update-cwiczenie.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO/usunCwiczenia/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/usun-cwiczenia.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO/usunCwiczenie/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/usun-cwiczenie.html
+$dokka.location:com.example.gymnote.data/CwiczeniaDAO/wstawCwiczenie/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-d-a-o/wstaw-cwiczenie.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO///PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/index.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/CwiczeniaREPO/#com.example.gymnote.data.CwiczeniaDAO/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/-cwiczenia-r-e-p-o.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/cwiczenia/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/cwiczenia.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/update/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/update.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/usun/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/usun.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/usunCwiczenia/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/usun-cwiczenia.html
+$dokka.location:com.example.gymnote.data/CwiczeniaREPO/wstaw/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenia-r-e-p-o/wstaw.html
+$dokka.location:com.example.gymnote.data/Cwiczenie///PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/index.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/Cwiczenie/#kotlin.Int#kotlin.String#kotlin.String#kotlin.String#kotlin.Int#kotlin.Int/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/-cwiczenie.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/ciezar/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/ciezar.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/cw_id/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/cw_id.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/ilosc/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/ilosc.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/imageUrl/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/image-url.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/nazwa/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/nazwa.html
+$dokka.location:com.example.gymnote.data/Cwiczenie/opis/#/PointingToDeclaration/app/com.example.gymnote.data/-cwiczenie/opis.html
+$dokka.location:com.example.gymnote.view////PointingToDeclaration/app/com.example.gymnote.view/index.html
+$dokka.location:com.example.gymnote.view/CwiczenieView///PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/index.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/CwiczenieView/#com.example.gymnote.data.CwiczeniaREPO/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/-cwiczenie-view.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/init_update_lub_usun/#com.example.gymnote.data.Cwiczenie/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/init_update_lub_usun.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/inputCiezar/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/input-ciezar.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/inputIlosc/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/input-ilosc.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/inputNazwa/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/input-nazwa.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/inputOpis/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/input-opis.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/message/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/message.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/usun_btn_text/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/usun_btn_text.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/usun_lub_usunCwiczenia/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/usun_lub_usun-cwiczenia.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/wczytajCwiczenia/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/wczytaj-cwiczenia.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/zapisz_lub_update/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/zapisz_lub_update.html
+$dokka.location:com.example.gymnote.view/CwiczenieView/zlu_btn_text/#/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view/zlu_btn_text.html
+$dokka.location:com.example.gymnote.view/CwiczenieViewFactory///PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view-factory/index.html
+$dokka.location:com.example.gymnote.view/CwiczenieViewFactory/CwiczenieViewFactory/#com.example.gymnote.data.CwiczeniaREPO/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view-factory/-cwiczenie-view-factory.html
+$dokka.location:com.example.gymnote.view/CwiczenieViewFactory/create/#java.lang.Class[TypeParam(bounds=[androidx.lifecycle.ViewModel])]/PointingToDeclaration/app/com.example.gymnote.view/-cwiczenie-view-factory/create.html
+$dokka.location:com.example.gymnote.view/Event///PointingToDeclaration/app/com.example.gymnote.view/-event/index.html
+$dokka.location:com.example.gymnote.view/Event/Event/#TypeParam(bounds=[kotlin.Any?])/PointingToDeclaration/app/com.example.gymnote.view/-event/-event.html
+$dokka.location:com.example.gymnote.view/Event/getContent/#/PointingToDeclaration/app/com.example.gymnote.view/-event/get-content.html
+$dokka.location:com.example.gymnote.view/Event/getContent_niezrobione/#/PointingToDeclaration/app/com.example.gymnote.view/-event/get-content_niezrobione.html
+$dokka.location:com.example.gymnote.view/Event/zrobione/#/PointingToDeclaration/app/com.example.gymnote.view/-event/zrobione.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter///PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/index.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter/getItemCount/#/PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/get-item-count.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter/myRecylcerViewAdapter/#kotlin.Function1[com.example.gymnote.data.Cwiczenie,kotlin.Unit]/PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/my-recylcer-view-adapter.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter/onBindViewHolder/#com.example.gymnote.view.myViewHolder#kotlin.Int/PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/on-bind-view-holder.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter/onCreateViewHolder/#android.view.ViewGroup#kotlin.Int/PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/on-create-view-holder.html
+$dokka.location:com.example.gymnote.view/myRecylcerViewAdapter/ustawListe/#kotlin.collections.List[com.example.gymnote.data.Cwiczenie]/PointingToDeclaration/app/com.example.gymnote.view/my-recylcer-view-adapter/ustaw-liste.html
+$dokka.location:com.example.gymnote.view/myViewHolder///PointingToDeclaration/app/com.example.gymnote.view/my-view-holder/index.html
+$dokka.location:com.example.gymnote.view/myViewHolder/bind/#com.example.gymnote.data.Cwiczenie#kotlin.Function1[com.example.gymnote.data.Cwiczenie,kotlin.Unit]/PointingToDeclaration/app/com.example.gymnote.view/my-view-holder/bind.html
+$dokka.location:com.example.gymnote.view/myViewHolder/binding/#/PointingToDeclaration/app/com.example.gymnote.view/my-view-holder/binding.html
+$dokka.location:com.example.gymnote.view/myViewHolder/myViewHolder/#ItemListaBinding/PointingToDeclaration/app/com.example.gymnote.view/my-view-holder/my-view-holder.html
+$dokka.location:com.example.gymnote////PointingToDeclaration/app/com.example.gymnote/index.html
+$dokka.location:com.example.gymnote/App.Companion///PointingToDeclaration/app/com.example.gymnote/-app/-companion/index.html
+$dokka.location:com.example.gymnote/App.Companion/appResources/#/PointingToDeclaration/app/com.example.gymnote/-app/-companion/app-resources.html
+$dokka.location:com.example.gymnote/App///PointingToDeclaration/app/com.example.gymnote/-app/index.html
+$dokka.location:com.example.gymnote/App/App/#/PointingToDeclaration/app/com.example.gymnote/-app/-app.html
+$dokka.location:com.example.gymnote/App/onCreate/#/PointingToDeclaration/app/com.example.gymnote/-app/on-create.html
+$dokka.location:com.example.gymnote/MainActivity///PointingToDeclaration/app/com.example.gymnote/-main-activity/index.html
+$dokka.location:com.example.gymnote/MainActivity/MainActivity/#/PointingToDeclaration/app/com.example.gymnote/-main-activity/-main-activity.html
+com.example.gymnote
+com.example.gymnote.data
+com.example.gymnote.view
+
