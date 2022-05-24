@@ -20,10 +20,10 @@
         android:layout_margin="15dp"
         android:layout_marginBottom="5dp"
         android:ems="10"
-        android:hint="Nazwa ćwiczenia"
-        android:text="@={mojView.inputNazwa}"
+        android:hint="@string/hint_nazwa"
         android:inputType="textPersonName"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:text="@={mojView.inputNazwa}" />
 
     <EditText
         android:id="@+id/opis_text"
@@ -32,10 +32,10 @@
         android:layout_margin="15dp"
         android:layout_marginBottom="5dp"
         android:ems="10"
-        android:hint="Opis ćwiczenia"
+        android:hint="@string/hint_opis"
         android:inputType="textPersonName"
-        android:text="@={mojView.inputOpis}"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:text="@={mojView.inputOpis}" />
 
     <EditText
         android:id="@+id/ciezar_text"
@@ -44,7 +44,7 @@
         android:layout_margin="15dp"
         android:layout_marginBottom="5dp"
         android:ems="10"
-        android:hint="Obciążenie"
+        android:hint="@string/hint_ciezar"
         android:inputType="number"
         android:minHeight="48dp"
         android:text="@={mojView.inputCiezar}" />
@@ -56,7 +56,7 @@
         android:layout_margin="15dp"
         android:layout_marginBottom="5dp"
         android:ems="10"
-        android:hint="Ilość powtórzeń"
+        android:hint="@string/hint_ilosc"
         android:inputType="number"
         android:minHeight="48dp"
         android:text="@={mojView.inputIlosc}" />
