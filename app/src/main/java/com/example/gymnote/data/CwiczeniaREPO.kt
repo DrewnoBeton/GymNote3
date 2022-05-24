@@ -1,8 +1,13 @@
 package com.example.gymnote.data
 
+/**
+ * test
+ *
+ * @property cwiczeniaDAO
+ */
 class CwiczeniaREPO(private val cwiczeniaDAO: CwiczeniaDAO) {
-    val cwiczenia = cwiczeniaDAO.getCwiczenia()
 
+    val cwiczenia = cwiczeniaDAO.getCwiczenia()
     suspend fun wstaw(cwiczenie: Cwiczenie): Long
     {
         return cwiczeniaDAO.wstawCwiczenie(cwiczenie)
