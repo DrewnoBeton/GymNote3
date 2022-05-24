@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
         })
         initRecyclerView()
     }
+
+    /**
+     * Funckja do inicjowania RecycleView
+     *
+     */
     private fun initRecyclerView()
     {
         binding.cwiczeniaRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -45,6 +50,11 @@ class MainActivity : AppCompatActivity() {
         binding.cwiczeniaRecyclerView.adapter = adapter
         wyswietlCwiczenia()
     }
+
+    /**
+     * Wyświetlanie ćwiczeń
+     *
+     */
     private fun wyswietlCwiczenia()
     {
         cwiczenieView.wczytajCwiczenia().observe(this, Observer {
@@ -52,8 +62,14 @@ class MainActivity : AppCompatActivity() {
             adapter.notifyDataSetChanged()
         })
     }
+
+    /**
+     * Obsluga kliknięcia na ćwiczenie
+     *
+     * @param cwiczenie Kliknięte ćwiczenie
+     */
     private fun wybranyItemClick(cwiczenie: Cwiczenie){
         cwiczenieView.init_update_lub_usun(cwiczenie)
-        Toast.makeText(this,"Wybrano ćwiczenie ${cwiczenie.cw_id}", Toast.LENGTH_LONG).show()
+        Toast.makeText(this,"${getString(R.string.wybrane_cw)} ${cwiczenie.cw_id}", Toast.LENGTH_LONG).show()
     }
 }

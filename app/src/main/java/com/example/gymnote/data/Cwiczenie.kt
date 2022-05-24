@@ -4,6 +4,16 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/**
+ * Klasa Ćwiczenie
+ *
+ * @property cw_id id ćwiczenia
+ * @property nazwa Nazwa ćwiczenia
+ * @property opis Opis ćwiczenia
+ * @property imageUrl Link do obrazka - NIEUŻYWANE
+ * @property ilosc Ostatnia ilość wykonanych powtórzeń
+ * @property ciezar Ostatni ciężar na którym wykonywano ćwiczenie
+ */
 @Entity(tableName =  "cwiczenia")
 data class Cwiczenie(
     @PrimaryKey(autoGenerate = true)

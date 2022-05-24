@@ -45,7 +45,7 @@
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="Obciążenie"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
         android:text="@={mojView.inputCiezar}" />
 
@@ -57,7 +57,7 @@
         android:layout_marginBottom="5dp"
         android:ems="10"
         android:hint="Ilość powtórzeń"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:minHeight="48dp"
         android:text="@={mojView.inputIlosc}" />
 

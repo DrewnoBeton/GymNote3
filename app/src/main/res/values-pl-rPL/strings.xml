@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GymNote PL</string>
+    <string name="wybrane_cw">Wybrano ćwiczenie</string>
+    <string name="zapisz">Zapisz</string>
+    <string name="zapisz_zmiany">Zapisz zmiany</string>
+    <string name="usun_wszytskie">Usuń wszytskie</string>
+    <string name="brak_nazwy">Podaj nazwę ćwiczenia</string>
+    <string name="brak_opisu">Podaj opis ćwiczenia</string>
+    <string name="aktualizacja">" ćwiczenie zostało zaktualizowane"</string>
+    <string name="usun">Usuń</string>
+    <string name="blad_aktualizacja">Błąd przy aktualizacji ćwiczenia</string>
+    <string name="wstaw">"Pomyślnie dodano ćwiczenie nr: "</string>
+    <string name="blad_wstaw">Błąd przy dodawaniu ćwiczenia</string>
+    <string name="usun_git">"Pomyślnie usunięto ćwiczenie nr: "</string>
+    <string name="blad_usun">Błąd przy usuwaniu ćwiczenia</string>
+    <string name="blad_usun_wszystkie">Błąd przy usuwaniu ćwiczeń</string>
+    <string name="usunieto">"Usunięto "</string>
+    <string name="cwiczen">" ćwiczeń"</string>
+    <string name="hint_nazwa">"Nazwa ćwiczenia "</string>
+    <string name="hint_opis">"Opis ćwiczenia "</string>
+    <string name="hint_ciezar">"Obciążenie "</string>
+    <string name="hint_ilosc">"Ilość powtórzeń "</string>
+    <string name="ostatnio_wykonano">"Ostatnio wykonano: "</string>
+    <string name="ostatnio_obciazenie">"Ostatnie obciążenie: "</string>
+</resources>

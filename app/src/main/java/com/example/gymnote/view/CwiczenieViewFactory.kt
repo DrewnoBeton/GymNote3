@@ -5,6 +5,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.gymnote.data.CwiczeniaREPO
 import java.lang.IllegalArgumentException
 
+/**
+ * Factory do tworzenia ViewModelu, mające repozytorium jako parametr konstruktora
+ *
+ * @property repo Repozytorium
+ */
 class CwiczenieViewFactory(private val repo: CwiczeniaREPO): ViewModelProvider.Factory
 {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

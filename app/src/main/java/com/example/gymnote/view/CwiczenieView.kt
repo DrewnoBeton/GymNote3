@@ -1,11 +1,19 @@
 package com.example.gymnote.view
 
 import androidx.lifecycle.*
+import com.example.gymnote.App
+import com.example.gymnote.R
 import com.example.gymnote.data.CwiczeniaREPO
 import com.example.gymnote.data.Cwiczenie
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.collect
 
+
+/**
+ * Instancja ViewModelu
+ *
+ * @property repo Repozytorium
+ */
 class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
 {
     private var czyWybrano = false
@@ -15,7 +23,6 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
     val inputIlosc = MutableLiveData<String>()
     val inputCiezar = MutableLiveData<String>()
 
-    //TODO przekminic ilosc i ciezar sypie sie jak sie nie da ciezaru
     val zlu_btn_text = MutableLiveData<String>()
     val usun_btn_text = MutableLiveData<String>()
 
@@ -25,21 +32,26 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
     get() = statusMessage
 
     init {
-        zlu_btn_text.value = "Zapisz"
-        usun_btn_text.value = "Usuń wszystkie"
+        //todo stringi w guziorach
+        zlu_btn_text.value = "${App.appResources!!.getString(R.string.zapisz)}"
+        usun_btn_text.value = "${App.appResources!!.getString(R.string.usun_wszytskie)}"
     }
 
+    /**
+     * Obsługa zapisu/aktualizacji
+     *
+     */
     fun zapisz_lub_update()
     {
         var ciezar = 0
         var ilosc = 0
         if(inputNazwa.value == null)
         {
-            statusMessage.value = Event("Podaj nazwę ćwiczenia")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.brak_nazwy)}")
         }
         else if (inputOpis.value == null)
         {
-            statusMessage.value = Event("Podaj opis ćwiczenia")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.brak_opisu)}")
         }
         else {
             if(czyWybrano)
@@ -73,6 +85,12 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             }
         }
     }
+
+    /**
+     * Obsługa trybu aktualizacji i usuwania konkretnego ćwiczenia
+     *
+     * @param cwiczenie Ćwiczenie do edycji
+     */
     fun init_update_lub_usun(cwiczenie: Cwiczenie)
     {
         inputNazwa.value = cwiczenie.nazwa
@@ -81,9 +99,16 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
         inputCiezar.value = cwiczenie.ciezar.toString()
         czyWybrano = true
         cwiczenieDoZmiany = cwiczenie
-        zlu_btn_text.value = "Zapisz zmiany"
-        usun_btn_text.value = "Usuń"
+        zlu_btn_text.value = "${App.appResources!!.getString(R.string.zapisz_zmiany)}"
+        usun_btn_text.value = "${App.appResources!!.getString(R.string.usun)}"
     }
+
+    /**
+     * Aktualizacja ćwiczenia
+     *
+     * @param cwiczenie Ćwiczenie do aktualizacji
+     * @return
+     */
     private fun updateCwiczenie(cwiczenie: Cwiczenie) = viewModelScope.launch {
         val wiersze = repo.update(cwiczenie)
         if (wiersze > 0)
@@ -93,28 +118,37 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             inputCiezar.value = ""
             inputIlosc.value = ""
             czyWybrano = false
-            zlu_btn_text.value = "Zapisz"
-            usun_btn_text.value = "Usuń wszystkie"
-            statusMessage.value = Event("$wiersze cwiczenie zostało zaktualizowane")
+            zlu_btn_text.value = "${App.appResources!!.getString(R.string.zapisz)}"
+            usun_btn_text.value = "${App.appResources!!.getString(R.string.usun_wszytskie)}"
+            statusMessage.value = Event("$wiersze ${App.appResources!!.getString(R.string.aktualizacja)}")
         }
         else
         {
-            statusMessage.value = Event("Błąd przy aktualizacji ćwiczenia")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.blad_aktualizacja)}")
         }
     }
-
+    /**
+     * Wstawianie ćwiczenia
+     *
+     * @param cwiczenie Ćwiczenie do wstawienia
+     * @return
+     */
     private fun wstawCwiczenie(cwiczenie: Cwiczenie) = viewModelScope.launch{
         val nowe_id = repo.wstaw(cwiczenie)
         if (nowe_id > -1)
         {
-            statusMessage.value = Event("Pomyślnie dodano ćwiczenie nr: $nowe_id")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.wstaw)} $nowe_id")
         }
         else
         {
-            statusMessage.value = Event("Bład przy dodawaniu ćwiczenia")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.blad_wstaw)}")
         }
     }
 
+    /**
+     * Wybór między usuwaniem jednego ćwiczenia a całości
+     *
+     */
     fun usun_lub_usunCwiczenia()
     {
         if(czyWybrano)
@@ -125,6 +159,13 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             usunCwiczenia()
         }
     }
+
+    /**
+     * Usunięcie ćwiczenia
+     *
+     * @param cwiczenie Ćwiczenie do usunięcia
+     * @return
+     */
     private fun usun(cwiczenie: Cwiczenie) = viewModelScope.launch {
         val wiersze = repo.usun(cwiczenie)
         if(wiersze > 0)
@@ -134,28 +175,37 @@ class CwiczenieView(private val repo: CwiczeniaREPO) : ViewModel()
             inputCiezar.value = ""
             inputIlosc.value = ""
             czyWybrano = false
-            zlu_btn_text.value = "Zapisz"
-            usun_btn_text.value = "Usuń wszystkie"
-            statusMessage.value = Event("$wiersze cwiczenie zostało usunięte")
+            zlu_btn_text.value = "${App.appResources!!.getString(R.string.zapisz)}"
+            usun_btn_text.value = "${App.appResources!!.getString(R.string.usun_wszytskie)}"
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.usun_git)} $wiersze")
         }
         else
         {
-            statusMessage.value = Event("Błąd przy usuwaniu ćwiczenia")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.blad_usun)}")
         }
     }
 
+    /**
+     * Usunięcie wszystkich ćwiczeń
+     *
+     * @return
+     */
     private fun usunCwiczenia() = viewModelScope.launch {
         val usuniete_wiersze = repo.usunCwiczenia()
         if(usuniete_wiersze > 0)
         {
-            statusMessage.value = Event("Usunięto ($usuniete_wiersze) ćwiczeń")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.usunieto)} ($usuniete_wiersze) ${App.appResources!!.getString(R.string.cwiczen)}")
         }
         else
         {
-            statusMessage.value = Event("Błąd przy usuwaniu ćwiczeń")
+            statusMessage.value = Event("${App.appResources!!.getString(R.string.blad_usun_wszystkie)}")
         }
     }
 
-
+    /**
+     * Pobranie listy ćwiczeń
+     *
+     * @return
+     */
     fun wczytajCwiczenia() = liveData{ repo.cwiczenia.collect{emit(it)} }
 }

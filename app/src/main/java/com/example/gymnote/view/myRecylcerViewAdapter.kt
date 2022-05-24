@@ -9,7 +9,11 @@ import com.example.gymnote.data.Cwiczenie
 import com.example.gymnote.databinding.ItemListaBinding
 import com.example.gymnote.generated.callback.OnClickListener
 
-
+/**
+ * Adapter do RecycleView
+ *
+ * @property clickListener Zaczep
+ */
 class myRecylcerViewAdapter(private val clickListener: (Cwiczenie) -> Unit): RecyclerView.Adapter<myViewHolder>()
 {
     private val listaCwiczen = ArrayList<Cwiczenie>()
@@ -27,6 +31,12 @@ class myRecylcerViewAdapter(private val clickListener: (Cwiczenie) -> Unit): Rec
     override fun onBindViewHolder(holder: myViewHolder, position: Int) {
         holder.bind(listaCwiczen[position], clickListener)
     }
+
+    /**
+     * Ustawia listę ćwiczeń
+     *
+     * @param cwiczenia
+     */
     fun ustawListe(cwiczenia: List<Cwiczenie>)
     {
         listaCwiczen.clear()
@@ -35,8 +45,18 @@ class myRecylcerViewAdapter(private val clickListener: (Cwiczenie) -> Unit): Rec
 }
 
 
-
+/**
+ * Klasa ViewHolder
+ *
+ * @property binding Powiązanie danych
+ */
 class myViewHolder(val binding: ItemListaBinding): RecyclerView.ViewHolder(binding.root) {
+    /**
+     * Funkcja obsługująca powiązanie danych
+     *
+     * @param cwiczenie Ćwiczenie
+     * @param clickListener Zmienna do nasłuchu kliknięć
+     */
     fun bind(cwiczenie: Cwiczenie, clickListener: (Cwiczenie) -> Unit)
     {
         binding.cwNazwaText.text = cwiczenie.nazwa
